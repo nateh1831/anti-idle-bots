@@ -7,10 +7,8 @@ $ybase = $aPos[1]
 
 $x =$xbase
 $y =$ybase
-$col = PixelGetColor ( $x , $y )
-if $col == 0xC86400 Then
 
-EndIf
+$col = PixelGetColor ( $x , $y )
 
 while 1 >0
 $l = 30
@@ -37,6 +35,7 @@ while($col == PixelGetColor ( $x , $y - $u ))
    $x = (($x-$l) + ($x + $r))/2
     $y = (($y-$u) + ($y + $d))/2
 MouseClick("left" , $x , $y, 1, 5)
+
 
    WEnd
 
