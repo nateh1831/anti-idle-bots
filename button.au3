@@ -7,10 +7,7 @@ $ybase = $aPos[1]
 
 $x =$xbase
 $y =$ybase
-$col = PixelGetColor ( $x , $y )
-if $col == 0xC86400 Then
-
-EndIf
+$col = 0xC86400
 
 while 1 >0
 
