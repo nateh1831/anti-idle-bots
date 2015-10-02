@@ -13,30 +13,30 @@ if $col == 0xC86400 Then
 EndIf
 
 while 1 >0
+$l = 30
+$r = 30
+$u = 40
+$d = 40
 
-if $col == PixelGetColor ( $x , $y ) Then
-MouseClick("left" , $x , $y, 1, 2)
+while($col == PixelGetColor ( $x - $l , $y ))
+   $l = $l + 2
+   WEnd
 
+while($col == PixelGetColor ( $x + $r , $y ))
+   $r = $r + 2
+WEnd
 
-ElseIf $col == PixelGetColor ( $x+50 , $y ) Then
-MouseClick("left" , $x+50 , $y, 1, 2)
-$x = $x +100
+while($col == PixelGetColor ( $x , $y + $d ))
+   $d = $d + 2
+WEnd
 
-ElseIf $col == PixelGetColor ( $x , $y+50 )Then
-MouseClick("left" , $x , $y+50, 1, 2)
-$y = $y +100
+while($col == PixelGetColor ( $x , $y - $u ))
+   $u = $u + 2
+   WEnd
 
-ElseIf $col == PixelGetColor ( $x-50 , $y )Then
-MouseClick("left" , $x-50 , $y, 1, 2)
-$x = $x -100
-
-ElseIf $col == PixelGetColor ( $x , $y-50 )Then
-MouseClick("left" , $x , $y-50, 1, 2)
-$y = $y -100
-EndIf
-
-
-
+   $x = (($x-$l) + ($x + $r))/2
+    $y = (($y-$u) + ($y + $d))/2
+MouseClick("left" , $x , $y, 1, 5)
 
    WEnd
 
